@@ -2,7 +2,6 @@
 node_modules/
 
 # Webpack
-dist/
 
 # IDE and editor files
 .vscode/
@@ -65,7 +64,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+
 
 # Gatsby files
 .cache/
