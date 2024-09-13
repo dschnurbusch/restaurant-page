@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-  devtool: 'inline-source-map',
+    devtool: process.env.NODE_ENV === 'production' ? 'source-map' : 'inline-source-map',
   devServer: {
     static: './dist',
   },
@@ -27,6 +27,11 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        use: ["source-map-loader"],
       },
     ],
   },
